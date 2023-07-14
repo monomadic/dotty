@@ -64,11 +64,11 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: completions.zip
-  cargo-publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - run: cargo login ${CRATES_IO_TOKEN}
-        env:
-          CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
-      - run: cargo publish
+  # cargo-publish:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - run: cargo login ${CRATES_IO_TOKEN}
+  #       env:
+  #         CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
+  #     - run: cargo publish
