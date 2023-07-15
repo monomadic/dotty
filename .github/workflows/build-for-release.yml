@@ -26,7 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Update rust
-        run: rustup update
+        run: |
+          rustup update
+          rustup target add ${{ matrix.target }}
       - name: Cache dependencies
         uses: Swatinem/rust-cache@v2
       - name: Build
